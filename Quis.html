@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8"> <!-- Указываем кодировку -->
+    <title>❤️IloveYou❤️</title>
+    <style>
+        .center-text{
+            margin-left: auto;
+
+            margin-right: auto;
+        }
+        .gif-container {
+            position: relative;
+            width: 100%;
+            text-align: center;
+            margin-top: 2cm; /* Добавляем отступ сверху */
+        }
+
+        .gif {
+            max-width: 100%;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .button {
+            background-color: #FFFFFF;
+            border: 1px solid #fc9de1;
+            border-radius: 8px;
+            box-sizing: border-box;
+            color: #fc9de1;
+            cursor: pointer;
+            display: inline-block;
+            font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,"Helvetica Neue",sans-serif;
+            font-size: 18px;
+            font-weight: 600;
+            line-height: 20px;
+            margin: 0;
+            outline: none;
+            padding: 26px 46px; /* Изменено значение отступов */
+            position: relative;
+            text-align: center;
+            text-decoration: none;
+            touch-action: manipulation;
+            transition: box-shadow .2s,-ms-transform .1s,-webkit-transform .1s,transform .1s;
+            user-select: none;
+            -webkit-user-select: none;
+            width: auto;
+        }
+
+        .button:hover {
+            transform: scale(1.1); /* Масштабируем кнопку при наведении */
+        }
+
+        body {
+            background: url("https://i.pinimg.com/564x/06/28/f1/0628f1f9ecb8ef2808409b6b2df88ad1.jpg");
+            background-size: cover;
+            overflow: hidden;
+            margin: 0;
+            height: 100vh;
+            position: relative;
+        }
+
+        @media only screen and (max-width: 600px) {
+            .gif {
+                width: 80%;
+                margin-top: 1cm; /* Понижаем гифку на мобильных устройствах */
+            }
+
+            .buttons {
+                display: block;
+                margin-top: 30px; /* Больше отступ от гифки для кнопок на мобильных устройствах */
+            }
+
+            .button {
+                padding: 40px 80px; /* Больше отступы для кнопок на мобильных устройствах */
+                font-size: 24px; /* Увеличиваем размер шрифта для кнопок на мобильных устройствах */
+                margin-bottom: 20px; /* Добавляем отступ снизу для кнопок на мобильных устройствах */
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+<center> <h1 style="color: #9378ff">Станешь моей валентинкой? <3</h1></center>
+<div class="gif-container">
+    <img class="gif" src="https://media.tenor.com/jgZBcWxzbyUAAAAi/cats-love.gif">
+    <div class="buttons">
+        <button class="button yes" onclick="redirectToAnotherPage()">ДА</button>
+        <button class="button no" onclick="moveButton('no')">НЕТ</button>
+    </div>
+</div>
+
+<script>
+    function redirectToAnotherPage() {
+        window.location.href = 'love.html'; // Перенаправляем пользователя на другую страницу
+    }
+
+    function moveButton(choice) {
+        var button = document.querySelector('.' + choice);
+        button.style.position = 'absolute';
+        button.style.top = Math.random() * 80 + '%'; // Случайное положение по вертикали (от 0% до 80%)
+        button.style.left = Math.random() * 80 + '%'; // Случайное положение по горизонтали (от 0% до 80%)
+        button.style.transition = 'top 1s, left 1s'; // Добавляем анимацию
+    }
+</script>
+</body>
+</html>
